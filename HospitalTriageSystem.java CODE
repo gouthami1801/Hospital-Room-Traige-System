@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class HospitalTriageSystem {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Patient ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Patient Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Triage Score: ");
+        int score = sc.nextInt();
+
+        String priority;
+
+        if (score >= 80)
+            priority = "EMERGENCY";
+        else if (score >= 60)
+            priority = "HIGH";
+        else if (score >= 40)
+            priority = "MEDIUM";
+        else
+            priority = "LOW";
+
+        String[] rooms = {"R101", "R102", "R103"};
+
+        System.out.println("\nPatient ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Priority: " + priority);
+        System.out.println("Room Allocated: " + rooms[0]);
+        System.out.println("Status: Admitted");
+
+        sc.close();
+    }
+}
